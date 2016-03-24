@@ -73,7 +73,7 @@ $(document).ready(function(){
 	});
 
 	$('#user-search').submit(function(){
-		var input = $('#movie-search').val();
+		var input = $('#movie-search').val() && $('#movies').val();
 		var searchMovie = baseUrl + 'search/multi' + apiKey + '&query=' + input;
 		console.log(searchMovie);
 
@@ -92,24 +92,24 @@ $(document).ready(function(){
 		event.preventDefault();
 	});
 	
-	$('#user-search').submit(function(){
-		var keyword = $('#movie-search').val();
-		var searchKeyword = baseUrl + 'search/movie' + apiKey + '&query=' + keyword;
-		console.log(searchKeyword);
+	// $('#user-search').submit(function(){
+	// 	var keyword = $('#movie-search').val();
+	// 	var searchKeyword = baseUrl + 'search/movie' + apiKey + '&query=' + keyword;
+	// 	console.log(searchKeyword);
 
-		$.getJSON(searchKeyword, function(searchData){
-		var newHTML = ' ';
-		for(i=0; i<searchData.results.length; i++){
-			keywordResult = imagePath + 'w300' + searchData.results[i].poster_path;
-			newHTML += '<div class="col-sm-3">';
-			newHTML += '<img src="' + keywordResult + '">';
-			newHTML += '</div>';
-			console.log(keywordResult);
-		}
-		$('#poster-grid').html(newHTML);
-		});
-		// console.log(searchMovie);
-		event.preventDefault();
-	});
+	// 	$.getJSON(searchKeyword, function(searchData){
+	// 	var newHTML = ' ';
+	// 	for(i=0; i<searchData.results.length; i++){
+	// 		keywordResult = imagePath + 'w300' + searchData.results[i].poster_path;
+	// 		newHTML += '<div class="col-sm-3">';
+	// 		newHTML += '<img src="' + keywordResult + '">';
+	// 		newHTML += '</div>';
+	// 		console.log(keywordResult);
+	// 	}
+	// 	$('#poster-grid').html(newHTML);
+	// 	});
+	// 	// console.log(searchMovie);
+	// 	event.preventDefault();
+	// });
 
 });
