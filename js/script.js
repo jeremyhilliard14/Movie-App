@@ -35,7 +35,7 @@ $(document).ready(function(){
 	});
 
 
-	$('#movies').click(function(){
+	$('#movie-button').click(function(){
 		var nowPlaying = baseUrl + 'movie/now_playing' + apiKey;
 
 		$.getJSON(nowPlaying, function(movieData){
@@ -45,7 +45,7 @@ $(document).ready(function(){
 				newHTML += '<div class="col-sm-3">';
 				newHTML += '<img src="' + currentPoster + '">';
 				newHTML += '</div>';
-				// console.log(currentPoster);
+				console.log(currentPoster);
 
 			}
 			$('#poster-grid').html(newHTML);
@@ -63,19 +63,19 @@ $(document).ready(function(){
 				newHTML += '<div class="col-sm-3">';
 				newHTML += '<img src="' + currentPoster + '">';
 				newHTML += '</div>';
-				// console.log(currentPoster);
+			 //console.log(currentPoster);
 			}	
 
 			$('#poster-grid').html(newHTML);
 		});
-		//console.log(movieData);
-		// event.preventDefault();
+		// console.log(movieData);
+		 event.preventDefault();
 	});
 
 	$('#user-search').submit(function(){
-		var input = $('#movie-search').val() && $('#movies').val();
-		var searchMovie = baseUrl + 'search/multi' + apiKey + '&query=' + input;
-		console.log(searchMovie);
+		var input = $('#search').val(); 
+		var searchMovie = baseUrl + 'search/movie' + apiKey + '&query=' + input;
+		console.log(input);
 
 		$.getJSON(searchMovie, function(searchData){
 		var newHTML = ' ';
@@ -91,6 +91,44 @@ $(document).ready(function(){
 		// console.log(searchMovie);
 		event.preventDefault();
 	});
+
+	// $('user-search').submit(function(){
+	// 	var keyword = $('#movie-search').val();
+	// 	// var movie = $('#movies').select();
+	// 	// var tv = $('#tv').select();
+	// 	// var actor = $('#actor').select();
+	// 	// var director = $('#director');
+	// 	var movieSearch = baseUrl + 'search/movie' + apiKey + '&query=' + keyword;
+	// 	var tvSearch = baseUrl + 'search/tv' + apiKey + '&query=' + keyword 
+	// 	if($('#movies').select() == true){
+	// 		$.getJSON(searchKeyword, function(searchData){
+	// 			var newHTML = ' ';
+	// 			for(i=0; i<searchData.results.length; i++){
+	// 				keywordResult = imagePath + 'w300' + searchData.results[i].poster_path;
+	// 				newHTML += '<div class="col-sm-3">';
+	// 				newHTML += '<img src="' + keywordResult + '">';
+	// 				newHTML += '</div>';
+	// 				console.log(keywordResult);
+	// 			}
+	// 		$('#poster-grid').html(newHTML);
+	// 		});
+	// 		event.preventDefault();
+	// 	}else if($('#tv').select() == true){
+	// 		$.getJSON(searchKeyword, function(searchData){
+	// 			var newHTML = ' ';
+	// 			for(i=0; i<searchData.results.length; i++){
+	// 				keywordResult = imagePath + 'w300' + searchData.results[i].poster_path;
+	// 				newHTML += '<div class="col-sm-3">';
+	// 				newHTML += '<img src="' + keywordResult + '">';
+	// 				newHTML += '</div>';
+	// 				console.log(keywordResult);
+	// 			}
+	// 		$('#poster-grid').html(newHTML);
+	// 		});
+
+	// 	}
+	// 	event.preventDefault();
+	// })
 	
 	// $('#user-search').submit(function(){
 	// 	var keyword = $('#movie-search').val();
@@ -108,7 +146,7 @@ $(document).ready(function(){
 	// 	}
 	// 	$('#poster-grid').html(newHTML);
 	// 	});
-	// 	// console.log(searchMovie);
+	// 	 //console.log(searchMovie);
 	// 	event.preventDefault();
 	// });
 

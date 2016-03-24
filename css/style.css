@@ -1,10 +1,21 @@
 /* line 1, ../compass/sass/style.scss */
-#wrapper {
-  background: blue;
+.container {
+  background: #c4c4c4;
 }
 
 /* line 6, ../compass/sass/style.scss */
 #poster-grid img {
   width: 100%;
   height: 396px;
+  margin-bottom: 10px;
+}
+
+/* line 13, ../compass/sass/style.scss */
+.user-select {
+  margin: 10px;
+}
+
+/* line 17, ../compass/sass/style.scss */
+select {
+  font-size: 20px;
 }

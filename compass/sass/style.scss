@@ -1,10 +1,19 @@
-#wrapper{
-	background: blue;
+.container{
+	background: #c4c4c4;
 }
 
 #poster-grid{
 	img{
 		width: 100%;
 		height: 396px;
+		margin-bottom: 10px;
 	}
+}
+
+.user-select{
+	margin: 10px;
+}
+
+select{
+	font-size: 20px;
 }
