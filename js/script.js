@@ -33,7 +33,23 @@ $(document).ready(function(){
 		//console.log(movieData);
 		
 	});
+	$('#home-button').click(function(){
+		var popularMovies = baseUrl + 'movie/popular' + apiKey;
 
+		$.getJSON(popularMovies, function(movieData){
+			var newHTML = ' ';
+			for(i=0; i<movieData.results.length; i++){
+				var currentPoster = imagePath + 'w300' + movieData.results[i].poster_path;
+				newHTML += '<div class="col-sm-3">';
+				newHTML += '<img src="' + currentPoster + '">';
+				newHTML += '</div>';
+				console.log(currentPoster);
+
+			}
+			$('#poster-grid').html(newHTML);
+		//console.log(movieData);
+		});
+	});
 
 	$('#movie-button').click(function(){
 		var nowPlaying = baseUrl + 'movie/now_playing' + apiKey;
@@ -72,21 +88,30 @@ $(document).ready(function(){
 		 event.preventDefault();
 	});
 
-	$('#user-search').submit(function(){
-		var input = $('#search').val(); 
-		var searchMovie = baseUrl + 'search/movie' + apiKey + '&query=' + input;
-		console.log(input);
+	$('#movie-form').submit(function(event){
+		var userSearch = $('#search').val(); 
+		var searchFilter = $('#search-filter').val();
+		console.log(userSearch);
 
-		$.getJSON(searchMovie, function(searchData){
-		var newHTML = ' ';
-		for(i=0; i<searchData.results.length; i++){
-			inputResult = imagePath + 'w300' + searchData.results[i].poster_path;
-			newHTML += '<div class="col-sm-3">';
-			newHTML += '<img src="' + inputResult + '">';
-			newHTML += '</div>';
-			console.log(inputResult);
-		}
-		$('#poster-grid').html(newHTML);
+		var searchURL = baseUrl + 'search/' + searchFilter + apiKey + '&query=' + encodeURI(userSearch);
+		// var searchMovie = baseUrl + 'search/movie' + apiKey + '&query=' + input;
+		
+
+		$.getJSON(searchURL, function(movieData){
+			console.log(movieData);
+			var newHTML = ' ';
+			for(i=0; i<movieData.results.length; i++){
+				if((searchFilter == 'person') || ((searchFilter == 'multi') && (movieData.results[i].media_type == 'person'))){
+					var currentPoster = imagePath + 'w300' + movieData.results[i].profile_path;
+				}else{
+					var currentPoster = imagePath + 'w300' + movieData.results[i].poster_path;
+				}
+				newHTML += '<div class="col-sm-3">';
+				newHTML += '<img src="' + currentPoster + '">';
+				newHTML += '</div>';
+			//console.log(currentPoster);
+			}
+			$('#poster-grid').html(newHTML);
 		});
 		// console.log(searchMovie);
 		event.preventDefault();

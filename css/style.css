@@ -1,6 +1,6 @@
 /* line 1, ../compass/sass/style.scss */
 .container {
-  background: #c4c4c4;
+  background: black;
 }
 
 /* line 6, ../compass/sass/style.scss */
@@ -8,14 +8,20 @@
   width: 100%;
   height: 396px;
   margin-bottom: 10px;
+  border: 2px solid white;
 }
 
 /* line 13, ../compass/sass/style.scss */
+#user-search {
+  margin-top: 10px;
+}
+
+/* line 16, ../compass/sass/style.scss */
 .user-select {
   margin: 10px;
 }
 
-/* line 17, ../compass/sass/style.scss */
+/* line 20, ../compass/sass/style.scss */
 select {
   font-size: 20px;
 }

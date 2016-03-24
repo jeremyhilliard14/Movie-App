@@ -14,16 +14,17 @@
 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<form id="user-search">
-					<input id="search" type="text" placeholder="search for...">
+				<form id="movie-form">
+					<input id="search" type="text" class="typeahead" placeholder="search for...">
 					<input type="submit" class="btn btn-primary" value="search">
-					<select>
-						<option id="movies" value="movies">Movies</option>
-						<option id="tv-shows" value="tv shows">Tv Shows</option>
-						<option id="actors" value="actors">Actors</option>
-						<option id="directors" value="directors">Directors</option>
+					<select id="search-filter">
+						<option id="movies" value="movie">Movies</option>
+						<option id="tv-shows" value="tv">Tv Shows</option>
+						<option id="actors" value="person">Actors</option>
+						<option id="all" value="multi">All</option>
 					</select>
 				</form>
+				<button class="user-select" id="home-button" value="home">Home</button>
 				<button class="user-select" id="movie-button" value="movies">Movies Playing Now</button>
 				<button class="user-select" id="tv" value="tv">TV Airing Today</button>
 			</div>
@@ -67,6 +68,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 
 </body>

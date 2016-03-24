@@ -1,5 +1,5 @@
 .container{
-	background: #c4c4c4;
+	background: black;
 }
 
 #poster-grid{
@@ -7,9 +7,12 @@
 		width: 100%;
 		height: 396px;
 		margin-bottom: 10px;
+		border: 2px solid white;
 	}
 }
-
+#user-search{
+margin-top: 10px;
+}
 .user-select{
 	margin: 10px;
 }
