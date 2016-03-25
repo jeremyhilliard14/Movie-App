@@ -25,3 +25,8 @@
 select {
   font-size: 20px;
 }
+
+/* line 24, ../compass/sass/style.scss */
+.genre-buttons {
+  margin: 10px;
+}
