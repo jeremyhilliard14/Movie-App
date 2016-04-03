@@ -1,0 +1,43 @@
+/* line 1, ../compass/sass/style.scss */
+.container {
+  background: black;
+}
+
+/* line 4, ../compass/sass/style.scss */
+#top-header {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+/* line 11, ../compass/sass/style.scss */
+#poster-grid img {
+  width: 100%;
+  height: 396px;
+  margin-bottom: 10px;
+  border: 2px solid #c4c4c4;
+}
+
+/* line 22, ../compass/sass/style.scss */
+.user-select {
+  margin: 10px;
+}
+
+/* line 26, ../compass/sass/style.scss */
+#search-filter {
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+/* line 31, ../compass/sass/style.scss */
+input {
+  margin: 10px;
+}
+
+/* line 35, ../compass/sass/style.scss */
+#search-btn {
+  background-color: gray;
+  border: 1px solid black;
+  margin-top: 22px;
+  margin-left: -10px;
+}
